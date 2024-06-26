@@ -1,8 +1,11 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import ctypes
+import os.path
 
-libObject = ctypes.CDLL('C:\\Users\\dh23880\\OneDrive - University of Bristol\\Documents\\SRGGEntropy\\SRGGEntropy\\SRGGEntropy\\clibrary.so')
+dll_name = "clibrary.so"
+dllabspath = os.path.dirname(os.path.abspath(__file__)) + os.path.sep + dll_name
+libObject = ctypes.CDLL(dllabspath)
 
 def square_entropy_hard(n, r0, lim):
     sq_ent_hard = libObject.square_entropy_hard

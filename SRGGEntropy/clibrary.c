@@ -54,6 +54,7 @@ double torus_distance_1d(double x, double y) {
     if (dx > 0.5) {
         dx = 1 - dx;
     }
+    return dx;
 }
 
 double torus_distance_2d(double x[], double y[]) {
@@ -1162,6 +1163,7 @@ double p_bar_exclusion(char geometry[], double r0, int lim) {
             sum += 0.5 * h * (f_disc(x)*exclusion(x, r0) + f_disc(x + h)*exclusion(x + h, r0));
         }
         return sum;
-    }
+    } 
+    return 0;
 }
                 
